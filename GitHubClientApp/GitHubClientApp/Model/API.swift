@@ -7,11 +7,13 @@
 
 import Foundation
 
+// CustomStringConvertibleに準拠するとプリントした時の文字を設定できる？
 enum APIError: Error, CustomStringConvertible {
     case unknown
     case invalidURL
     case invalidResponse
 
+    // print(APIErrorのインスタンス)で設定した文字が出力される
     var description: String {
         switch self {
         case .unknown: return "不明なエラーです"
